@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌤️ Weather App</h1>
+        <p class="date" id="date"></p>
+
+        <form method="POST">
+            <input type="text" name="city" placeholder="Enter city name..." required>
+            <button type="submit">Search</button>
+        </form>
+
+        {% if weather %}
+        <div class="weather-box">
+            <h2>{{ weather.city }}</h2>
+            <p>🌡️ Temperature: {{ weather.temp }}°C</p>
+            <p>💧 Humidity: {{ weather.humidity }}%</p>
+            <p>🌬️ Wind Speed: {{ weather.wind }} m/s</p>
+            <p>☁️ {{ weather.description }}</p>
+        </div>
+        {% endif %}
+
+        {% if forecast %}
+        <div class="forecast">
+            <h3>5 Day Forecast</h3>
+            {% for day in forecast %}
+            <div class="forecast-item">
+                <p>📅 {{ day.date }}</p>
+                <p>🌡️ {{ day.temp }}°C</p>
+                <p>☁️ {{ day.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+
+    <script>
+        const date = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById("date").innerText = date.toLocaleDateString('en-IN', options);
+    </script>
+</body>
+</html>

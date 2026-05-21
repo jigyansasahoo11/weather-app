@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #764ba2;
+}
+
+.weather-box {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f0f4ff;
+    border-radius: 15px;
+}
+
+.weather-box h2 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.weather-box p {
+    margin: 8px 0;
+    color: #555;
+    font-size: 16px;
+}
+
+.error {
+    color: red;
+    margin-top: 15px;
+}
+
+.date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.forecast {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.forecast h3 {
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.forecast-item {
+    background: #f0f4ff;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+}
+
+.forecast-item p {
+    color: #555;
+    margin: 3px 0;
+    font-size: 14px;
+}

@@ -1,9 +1,13 @@
 from flask import Flask, render_template, request
+from dotenv import load_dotenv
 import requests
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
 
-API_KEY = "43f35404011b682beb40d8d30484a159"
+API_KEY = os.getenv("API_KEY")
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -45,4 +49,3 @@ def index():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
